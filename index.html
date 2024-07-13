@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap" rel="stylesheet">
     <title>Subscription</title>
     <link rel="icon" href="Symbol.ico" type="image/x-icon">
     <style>
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(135deg, #0D1B26, #246083, #08d2cd, #0F2741);
+            font-family: 'Cairo', sans-serif;
+            animation: gradient 1s ease infinite;
+            background: linear-gradient(15deg, #0D1B26, #246083, #08d2cd, #0D1B26);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -16,19 +18,35 @@
             margin: 0;
             color: #ffffff;
         }
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            25% {
+                background-position: 50% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            75% {
+                background-position: 50% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
         .container {
-            background: linear-gradient(135deg, #0D1B26, #0F2741);
-            padding: 40px;
+            animation: gradient 10s ease infinite;
+            background: linear-gradient(135deg, #0D1B26, #246083, #0D1B26);
+            padding: 60px 40px 40px 40px; /* Increased padding-top */
             border-radius: 10px;
             text-align: center;
             width: 90%;
             max-width: 600px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
-        h1 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
+        
         p {
             font-size: 1.2em;
             margin-bottom: 20px;
@@ -39,30 +57,42 @@
             margin-top: 20px;
         }
         .logo {
-            max-width: 20%;
-            height: auto;
-            margin-bottom: 0px;
+            height: 50px; 
+            margin-right: 10px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 2em;
+            margin: 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Subscribe to Hexagon Newsletter</h1> 
-        <img src="HEX.png" alt="Logo" class="logo">
+        <div class="header">
+            <img src="HEX.png" alt="Logo" class="logo">
+            <h1>Subscribe to Hexagon Newsletter</h1>
+        </div>
         <p>Fill out the form below to subscribe to our newsletter.</p>
         
-        <!-- BEGIN: Benchmark Email Signup Form Code -->
-<script type="text/javascript" id="lbscript1760688" src="https://lb.benchmarkemail.com//code/lbformnew.js?mFcQnoBFKMRO0H0CietAG1gg49YEcrgG7e1Udrs9fAb57W0E1q1vSg%253D%253D">
-
-</script>
-<noscript>Please enable JavaScript <br />
-    <div align="center" style="padding-top:5px;font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#999999;"><a href="https://www.benchmarkemail.com/email-marketing?utm_source=usersignupforms&utm_medium=customers&utm_campaign=usersignupforms" target="_new" style="text-decoration:none;font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#999999;">Email Marketing </a> by Benchmark</div>
-</noscript>
-<!-- END: Benchmark Email Signup Form Code -->
+    
+        <script type="text/javascript" id="lbscript1760688" src="https://lb.benchmarkemail.com//code/lbformnew.js?mFcQnoBFKMRO0H0CietAG1gg49YEcrgG7e1Udrs9fAb57W0E1q1vSg%253D%253D"></script>
+        <noscript>Please enable JavaScript <br />
+            <div align="center" style="padding-top:5px;font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#999999;">
+                <a href="https://www.benchmarkemail.com/email-marketing?utm_source=usersignupforms&utm_medium=customers&utm_campaign=usersignupforms" target="_new" style="text-decoration:none;font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#999999;">Email Marketing </a> by Benchmark
+            </div>
+        </noscript>
+       
 
         <div class="footer">
-            <p>Powered by <a href="https://web.facebook.com/mouh.kessad.1" style="color: #cccccc;">Kessad Mohamed Dhia Eddine</a></p>
+            <p>Made by <a href="https://web.facebook.com/mouh.kessad.1" style="color: #cccccc;">Kessad Mohamed Dhia Eddine</a></p>
         </div>
     </div>
 </body>
 </html>
+
