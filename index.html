@@ -52,8 +52,14 @@
         }
 
         p {
+            font-family: 'Cairo', sans-serif;
             font-size: 1.2em;
             margin-bottom: 20px;
+            min-height: 1.5em;
+            background: linear-gradient(90deg, #eefdfe, #246083);
+            -webkit-background-clip: text;
+            color: transparent;
+            margin: 0 auto; 
         }
 
         .footer {
@@ -110,7 +116,7 @@
             <img src="HEX.png" alt="Logo" class="logo">
             <h1>Subscribe to Hexagon Newsletter</h1>
         </div>
-        <p>Fill out the form below to subscribe to our newsletter.</p>
+        <p id="rotating-text">Innovation</p>
         <script type="text/javascript" id="lbscript1760688" src="https://lb.benchmarkemail.com//code/lbformnew.js?mFcQnoBFKMRO0H0CietAG1gg49YEcrgG7e1Udrs9fAb57W0E1q1vSg%253D%253D"></script>
         <noscript>Please enable JavaScript <br />
             <div align="center" style="padding-top:5px;font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#999999;">
@@ -121,6 +127,39 @@
             <p>Made by <a href="https://web.facebook.com/mouh.kessad.1" style="color: #cccccc;">Kessad Mohamed Dhia Eddine</a></p>
         </div>
     </div>
+    <script>
+        const words = ["Medicine and Healthcare", "Electronics and Computing", "Energy", "Environment", "Materials Science", "Agriculture and Food", "Automotive and Aerospace", "Textiles", "Cosmetics", "Defense and Security"];
+        let wordIndex = 0;
+        let letterIndex = 0;
+        let currentWord = words[wordIndex];
+        let isRemoving = false;
+
+        const pElement = document.getElementById('rotating-text');
+
+        function updateText() {
+            if (isRemoving) {
+                if (letterIndex > 0) {
+                    letterIndex--;
+                    pElement.textContent = currentWord.slice(0, letterIndex);
+                } else {
+                    isRemoving = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                    currentWord = words[wordIndex];
+                }
+            } else {
+                if (letterIndex < currentWord.length) {
+                    letterIndex++;
+                    pElement.textContent = currentWord.slice(0, letterIndex);
+                } else {
+                    setTimeout(() => {
+                        isRemoving = true;
+                    }, 1000); 
+                }
+            }
+        }
+
+        setInterval(updateText, 100); // Change letter every 100ms
+    </script>
 </body>
 </html>
 
